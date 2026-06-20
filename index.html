@@ -15,8 +15,7 @@
         body {
             background: #0f0f10;
             color: #fff;
-            /* Center lock hatane ke liye ye 2 lines hata di hain */
-            padding: 40px 20px; 
+            padding: 0; /* Upar ka margin hata diya */
         }
         .glass-card {
             background: rgba(255, 255, 255, 0.05);
@@ -27,10 +26,13 @@
             padding: 50px;
             max-width: 800px;
             width: 100%;
-            margin: 0 auto 50px auto; /* Neeche margin diya taaki next section se space rahe */
+            margin: 0 auto; /* Neeche ka bada margin hata diya */
             text-align: center;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
             transition: transform 0.3s ease;
+            /* Box ko top par chipkane ke liye radius ka top part hata diya (optional) */
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
         }
         .glass-card:hover {
             transform: translateY(-5px);
@@ -72,7 +74,7 @@
         /* Naya Section: Services (Isliye scroll karna padega) */
         .services-section {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 50px auto 0 auto; /* Top margin diya taaki box se door ho */
             text-align: center;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -100,6 +102,11 @@
         @media (max-width: 600px) {
             .stats { flex-direction: column; align-items: center; }
             h1 { font-size: 2rem; }
+            .glass-card {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                margin-top: 0;
+            }
         }
     </style>
 </head>
@@ -119,7 +126,6 @@
         </div>
     </div>
 
-    <!-- Ye naya section add kiya hai taaki scroll karna pare -->
     <div class="services-section">
         <h3>Our Services</h3>
         <div class="service-list">
@@ -129,7 +135,7 @@
             <div class="service-item">Web Dev</div>
             <div class="service-item">Branding</div>
         </div>
-        <p style="margin-top: 30px; font-size: 0.9rem; color: #666;">
+        <p style="margin-top: 30px; margin-bottom: 50px; font-size: 0.9rem; color: #666;">
             Scroll up and down to see the effect.
         </p>
     </div>
